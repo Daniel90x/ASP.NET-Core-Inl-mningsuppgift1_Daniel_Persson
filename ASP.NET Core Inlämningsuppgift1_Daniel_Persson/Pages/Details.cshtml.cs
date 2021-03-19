@@ -10,20 +10,31 @@ using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 {
-    public class IndexModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext _context;
 
-        public IndexModel(ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext context)
+        public DetailsModel(ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext context)
         {
             _context = context;
         }
 
-        public IList<Event> Event { get;set; }
+        public Event Event { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            Event = await _context.Event.ToListAsync(); // bytade Event efter _context. till Events...
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventId == id);
+
+            if (Event == null)
+            {
+                return NotFound();
+            }
+            return Page();
         }
     }
 }

@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
 {
@@ -13,7 +15,29 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            CreateDbIfNotExists(host);
+
+            host.Run();
+        }
+        private static void CreateDbIfNotExists(IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<EventContext>();
+                    context.Database.EnsureCreated();
+                    // DbInitializer.Initialize(context);
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                }
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

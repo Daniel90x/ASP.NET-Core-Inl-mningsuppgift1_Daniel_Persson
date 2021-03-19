@@ -1,79 +1,60 @@
 ﻿@page
-@model IndexModel
+@model ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages.IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Index";
 }
 
-<header>
-    <div class="MainHeaderBody">
-        <div class="text-center">
-            <h1 class="display-4">Welcome To EventApp</h1>
-            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        </div>
-        <div>
+<h1>Index</h1>
 
-            <button>Home</button>
-            <button>Events</button>
-            <button>My Events</button>
-            <button>Login</button>
-
-        </div>
-    </div>
-
-</header>
-<body>
-    <main>
-        <div class="MainContainer">
-            <h1>Welcome to Event</h1>
-            <p>
-                Text för paragraph
-            </p>
-        </div>
-        <div class="LoginButtons">
-            <button>Register</button>
-            <button>Login</button>
-        </div>
-
-
-
-
-
-
-    </main>
-
-</body>
-
-<!--                 <header>
-    <div class="MainHeaderBody">
-        <div class="text-center">
-            <h1 class="display-4">Welcome To EventApp</h1>
-            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        </div>
-        <div
-
-            <button>Home</button>
-            <button>Events</button>
-            <button>My Events</button>
-            <button>Login</button>
-
-
-        </div>
-    </div>
-
-</header>
-    <
-    <header>
-    <div class="MainHeaderBody">
-        <div class="text-center">
-            <h1 class="display-4">Welcome To EventApp</h1>
-            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        </div>
-        <div>
-
-            <button>Hej</button>
-
-        </div>
-    </div>
-
-
-    /*
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].OrganizerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Event) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EventId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EventId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EventId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

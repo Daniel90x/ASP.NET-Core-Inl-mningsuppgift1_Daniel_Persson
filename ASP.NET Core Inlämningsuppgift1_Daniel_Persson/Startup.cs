@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
 {
@@ -24,6 +26,11 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<EventContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("EventContext")));
+
+            services.AddDatabaseDeveloperPageExceptionFilter(); // ADDAT själv via guide... Install-Package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
