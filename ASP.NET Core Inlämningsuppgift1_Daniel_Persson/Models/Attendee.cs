@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models; // maaybe
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
 {

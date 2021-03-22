@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models;
 
+
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
 {
     public class EventContext : DbContext
@@ -25,7 +26,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
             modelBuilder.Entity<organizer>().ToTable("organizer");
         }
 
-        public void Seed()
+        public void Seed() // WiP 
         {
             this.Event.RemoveRange(this.Event);
 
@@ -41,3 +42,6 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
         }
     }
 }
+
+
+// SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Event_organizer_OrganizerId". The conflict occurred in database "EventContext-d7b4be54-29ab-403f-afcf-dd0e80809490", table "dbo.organizer", column 'OrganizerId'.

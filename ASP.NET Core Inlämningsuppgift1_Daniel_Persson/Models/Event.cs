@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models; // maaaybe
+using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
 {
@@ -14,6 +16,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public List<Attendee> Attendees { get; set; }
+        // public List<organizer> organizers { get; set; }
 
 
 
