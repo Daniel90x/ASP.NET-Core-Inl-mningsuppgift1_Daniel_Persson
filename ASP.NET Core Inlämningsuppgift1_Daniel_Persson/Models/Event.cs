@@ -12,11 +12,14 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
         public int EventId { get; set; }
         public string Title { get; set; }
         public int OrganizerId { get; set; }
+
+        public int AttendeeId { get; set; }
         public string Adress { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public List<Attendee> Attendees { get; set; }
-        // public List<organizer> organizers { get; set; }
+        
+        public List<organizer> organizers { get; set; } // remove....
 
 
 

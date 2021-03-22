@@ -14,6 +14,9 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
         public string Adress { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+
+        public int EventID { get; set; } // Ny
+        // public Event Event { get; set; } // Ny
         public List<Event> Events { get; set; }
     }
 }

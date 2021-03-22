@@ -16,7 +16,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
         }
 
         public DbSet<Event> Event { get; set; }
-        public DbSet<Attendee> Attendees { get; set; }
+        public DbSet<Attendee> Attendees { get; set; } 
         public DbSet<organizer> Organizers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -25,6 +25,8 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
             modelBuilder.Entity<Attendee>().ToTable("Attendee");
             modelBuilder.Entity<organizer>().ToTable("organizer");
         }
+
+
 
         public void Seed() // WiP 
         {
