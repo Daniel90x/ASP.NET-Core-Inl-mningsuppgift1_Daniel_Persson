@@ -9,13 +9,13 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
 {
     public class Attendee
     {
-        public int AttendeeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Adress { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
-        public int EventID { get; set; } // Ny
+        // public int EventID { get; set; } // Ny
         // public Event Event { get; set; } // Ny
         public List<Event> Events { get; set; }
     }

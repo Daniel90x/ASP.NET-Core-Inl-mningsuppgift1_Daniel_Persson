@@ -17,19 +17,22 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
 
         public DbSet<Event> Event { get; set; }
         public DbSet<Attendee> Attendees { get; set; } 
-        public DbSet<organizer> Organizers { get; set; }
+        public DbSet<Organizer> Organizers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Event>().ToTable("Event");
+            modelBuilder.Entity<Event>().ToTable("Event"); // bytar namn på dem i table
             modelBuilder.Entity<Attendee>().ToTable("Attendee");
-            modelBuilder.Entity<organizer>().ToTable("organizer");
+            modelBuilder.Entity<Organizer>().ToTable("organizer");
         }
 
 
-
-        public void Seed() // WiP 
+        
+        public void Seed() // Seeda info
         {
+            // this.Event.RemoveRange(this.Event);                    VET EJ
+
+            this.Database.EnsureCreated(); // KAn gå fel... 
             this.Event.RemoveRange(this.Event);
 
             this.Event.AddRange(new List<Models.Event>() {

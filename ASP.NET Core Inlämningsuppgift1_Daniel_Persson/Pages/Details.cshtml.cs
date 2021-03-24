@@ -28,7 +28,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventId == id);
+            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {

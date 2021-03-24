@@ -7,9 +7,9 @@ using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
 {
-    public class organizer
+    public class Organizer
     {
-        public int OrganizerId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
         public string Email { get; set; }

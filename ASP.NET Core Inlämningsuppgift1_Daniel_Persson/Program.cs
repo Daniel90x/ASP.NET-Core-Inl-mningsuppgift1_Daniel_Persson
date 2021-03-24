@@ -24,13 +24,16 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
                 var context = services.GetRequiredService<Data.EventContext>();
                 context.Seed();
 
+              //  CreateDbIfNotExists(host); // Flyttat
             }
 
-            CreateDbIfNotExists(host);
+            // CreateDbIfNotExists(host);  // MAAAAAAAAAAAAYBE FEL
 
             host.Run();
         }
-        private static void CreateDbIfNotExists(IHost host)
+
+        /*
+        private static void CreateDbIfNotExists(IHost host)        // Kanske tar bort sen....
         {
             using (var scope = host.Services.CreateScope())
             {
@@ -47,7 +50,8 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
                     logger.LogError(ex, "An error occurred creating the DB.");
                 }
             }
-        }
+        
+        */
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

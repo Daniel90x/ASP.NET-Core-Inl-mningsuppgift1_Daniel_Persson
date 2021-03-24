@@ -30,7 +30,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventId == id);
+            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -56,7 +56,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EventExists(Event.EventId))
+                if (!EventExists(Event.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
         private bool EventExists(int id)
         {
-            return _context.Event.Any(e => e.EventId == id);
+            return _context.Event.Any(e => e.Id == id);
         }
     }
 }
