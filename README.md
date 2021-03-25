@@ -2,7 +2,7 @@
 
 ASP .NET Core
 
-Startup:
+Startup: I Startup så konfiguerar vi den kod som påverkar vilka inställningar våran webbapplikation ska ha och hur de ska fungera. 
 
 wwwroot:
 
