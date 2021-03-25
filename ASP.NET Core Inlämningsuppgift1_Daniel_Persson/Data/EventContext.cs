@@ -36,9 +36,9 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
             this.Event.RemoveRange(this.Event);
 
             this.Event.AddRange(new List<Models.Event>() {
-                    new Models.Event(){ Title="Gunnars hammar", Adress="Strandgatan 22"},
-                    new Models.Event(){ Title= "hejs", Adress="Björkstigen 9"},
-                    new Models.Event(){ Title="allt här", Adress="Östig 2"},
+                    new Models.Event(){ Title="Gunnars Band", Adress="Strandgatan 22", Description="Gunnar Band kommer till Strandgatan 22 och kommer spela sina bästa hits"},
+                    new Models.Event(){ Title= "Gotlandvision Teather", Adress="Björkstigen 9", Description="Skaffa biljetter till Godlandvisions show"},
+                    new Models.Event(){ Title="Oj vad skojigt!", Adress="Östig 2", Description="Oj vad skojigt är en komedi sketch med dina favorit komiker"},
                 });
 
             this.SaveChanges();
