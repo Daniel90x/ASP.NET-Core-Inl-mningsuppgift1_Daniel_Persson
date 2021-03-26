@@ -11,11 +11,11 @@ using ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models;
 
 namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 {
-    public class EditModel : PageModel
+    public class JoinEventMOdel : PageModel
     {
         private readonly ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext _context;
 
-        public EditModel(ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext context)
+        public JoinEventMOdel(ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data.EventContext context)
         {
             _context = context;
         }

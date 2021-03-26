@@ -42,7 +42,7 @@
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Event[0].Date)
                 </dd>
-                <a asp-page="./Edit" asp-route-id="@Model.Event[0].Id">Join</a> <!-- Göra en dedikerad Join Sida  -->
+                <a asp-page="/JoinEvent" asp-route-id="@Model.Event[0].Id">Join</a> <!-- Göra en dedikerad Join Sida  -->
 
 
 
