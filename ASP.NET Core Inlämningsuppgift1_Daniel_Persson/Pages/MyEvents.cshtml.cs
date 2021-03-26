@@ -27,6 +27,8 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
         [BindProperty]
         public List<Event> Event { get; set; }
 
+
+
         public async Task<IActionResult> OnGetAsync()
         {
             Event = await _context.Event.ToListAsync();
@@ -36,4 +38,3 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
     }
     
 }
-

@@ -37,7 +37,27 @@
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].Attendees)
             </th>
+           
+                <td>
+                    @Html.DisplayFor(model => model.Event[0].Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Event[0].Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Event[0].Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Event[0].Adress)
+                </td>
+                <td>
+                     <a asp-page="./Index" asp-route-id="">Home</a> 
 
+                </td>
+
+
+
+           
         </tr>
     </thead>
     <tbody>
