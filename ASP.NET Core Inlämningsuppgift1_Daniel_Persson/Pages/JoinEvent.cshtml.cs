@@ -22,6 +22,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
         [BindProperty]
         public Event Event { get; set; }
+        
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -38,6 +39,51 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
             }
             return Page();
         }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+
+
+        [BindProperty] // WiP Dunno om den fungerar än....
+        public Event AddEvent { get; set; }
+        // public Attendee Attendee { get; set; }
+
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            var attendee = await _context.Attendees.Where(a => a.Id == 1).Include(e => e.Events).FirstOrDefaultAsync();
+
+            var join = await _context.Event.Where(e => e.Id == id).FirstOrDefaultAsync();
+
+            attendee.Events.Add(join);
+            await _context.SaveChangesAsync();
+            return RedirectToPage("/MyEvents");
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
+
+/*
+
+
+
+
+
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
@@ -73,5 +119,40 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
         {
             return _context.Event.Any(e => e.Id == id);
         }
-    }
-}
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
