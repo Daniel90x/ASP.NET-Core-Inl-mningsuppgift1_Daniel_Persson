@@ -29,7 +29,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
 
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGetAsync() // Behövs en bättre funktion här som låter oss adda events till Attendee
         {
             Event = await _context.Event.ToListAsync();
 

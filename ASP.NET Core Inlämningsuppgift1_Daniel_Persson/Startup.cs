@@ -15,7 +15,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration) 
         {
             Configuration = configuration;
         }

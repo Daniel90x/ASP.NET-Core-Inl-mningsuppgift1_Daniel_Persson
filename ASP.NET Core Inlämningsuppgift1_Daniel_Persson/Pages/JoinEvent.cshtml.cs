@@ -44,7 +44,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
         // For more details, see https://aka.ms/RazorPagesCRUD.
 
 
-        [BindProperty] // WiP Dunno om den fungerar än....
+        [BindProperty] // WiP har inte fått det till att fungera än, så att man kan joina.
         public Event AddEvent { get; set; }
         // public Attendee Attendee { get; set; }
 
@@ -67,92 +67,6 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
 
 
-
-
-
-
-
-
     }
 }
-
-
-/*
-
-
-
-
-
-
-
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(Event).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EventExists(Event.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
-        }
-
-        private bool EventExists(int id)
-        {
-            return _context.Event.Any(e => e.Id == id);
-        }
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
