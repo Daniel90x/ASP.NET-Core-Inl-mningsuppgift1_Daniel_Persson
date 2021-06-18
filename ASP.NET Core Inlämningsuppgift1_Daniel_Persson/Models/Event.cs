@@ -11,20 +11,16 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        // public int OrganizerId { get; set; }
-
-        // public int AttendeeId { get; set; }
+        
         public string Adress { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
+
+        public int Spots_available { get; set; } // ny
         public List<Attendee> Attendees { get; set; }
         
-        public Organizer Organizers { get; set; } // remove....
-
-
+        public Organizer Organizers { get; set; } 
 
     }
 }
 
-// du kan lägga till de två andra klasserna direkt till contexten
-// som SetDb<MyModel> properites
