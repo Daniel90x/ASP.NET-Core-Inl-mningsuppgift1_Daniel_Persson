@@ -19,7 +19,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
             _context = context;
         }
 
-        public List<Event> Event { get; set; } // Bytat till List
+        public IList<Event> Event { get; set; } // Bytat till List - La till ett I precis innan List.
 
         public async Task<IActionResult> OnGetAsync()
         {

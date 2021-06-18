@@ -24,16 +24,26 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
             _context = context;
         }
 
-        [BindProperty]
-        public List<Event> Event { get; set; }
+        // [BindProperty]
+
+        public IList<Event> Event { get; set; } // La till I före List här med
 
 
 
-        public async Task<IActionResult> OnGetAsync() // Behövs en bättre funktion här som låter oss adda events till Attendee
+        public async Task OnGetAsync() // Behövs en bättre funktion här som låter oss adda events till Attendee
         {
-            Event = await _context.Event.ToListAsync();
+            var attendee = await _context.Attendees.Include(a => a.Events).FirstOrDefaultAsync(); // NYTT
 
-            return Page();
+
+            Event = attendee.Events; // NYTT
+
+
+
+            //////////////////////////
+            ///Gammal kod
+            // Event = await _context.Event.ToListAsync();
+
+            // return Page();
         }
     }
     

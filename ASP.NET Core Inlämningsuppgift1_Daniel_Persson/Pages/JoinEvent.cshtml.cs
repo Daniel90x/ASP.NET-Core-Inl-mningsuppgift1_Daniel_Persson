@@ -20,9 +20,9 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
             _context = context;
         }
 
-        [BindProperty]
+        // [BindProperty]
         public Event Event { get; set; }
-        
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,13 +31,24 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Event.Include(e => e.Attendees).FirstOrDefaultAsync(m => m.Id == id); // Lagt in .include(e => e.Attendess) från facit + EVENTS?
 
             if (Event == null)
             {
                 return NotFound();
             }
-            return Page();
+
+            var attendee = await _context.Attendees.FirstOrDefaultAsync(); // Bytat ut här...
+            if (!Event.Attendees.Contains(attendee))
+            {
+                Event.Attendees.Add(attendee);
+                await _context.SaveChangesAsync();
+
+            }
+             return Page();
+
+
+
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -45,10 +56,28 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
 
         [BindProperty] // WiP har inte fått det till att fungera än, så att man kan joina.
-        public Event AddEvent { get; set; }
-        // public Attendee Attendee { get; set; }
+                        public Event AddEvent { get; set; } // SKA BORT SEN...
+                       // public Attendee Attendee { get; set; }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
+/*
+public async Task<IActionResult> OnPostAsync(int? id)
         {
             var attendee = await _context.Attendees.Where(a => a.Id == 1).Include(e => e.Events).FirstOrDefaultAsync();
 
@@ -63,10 +92,6 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
 
         }
-
-
-
-
-    }
-}
-
+ 
+ 
+ */

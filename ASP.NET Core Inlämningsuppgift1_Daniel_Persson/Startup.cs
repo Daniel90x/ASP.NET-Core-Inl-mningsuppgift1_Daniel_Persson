@@ -34,10 +34,11 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, EventContext context) // La till EventContext context...
         {
             if (env.IsDevelopment())
             {
+                context.Seed();              // La till context.Seed();
                 app.UseDeveloperExceptionPage();
             }
             else
