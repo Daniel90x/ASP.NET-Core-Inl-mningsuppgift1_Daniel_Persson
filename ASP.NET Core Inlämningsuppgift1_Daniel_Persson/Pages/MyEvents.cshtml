@@ -42,17 +42,23 @@
     <tbody>
         @foreach (var item in Model.Event)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Event[0].Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Event[0].Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Event[0].Adress)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Event[0].Title)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Event[0].Description)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Event[0].Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Event[0].Date)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Event[0].Attendees)
+            </td>
+        </tr>
                 }
         </tbody>
 </table>
