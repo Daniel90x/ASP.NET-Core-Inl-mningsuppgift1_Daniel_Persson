@@ -21,11 +21,11 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Pages
 
         public IList<Event> Event { get; set; } // Bytat till List - La till ett I precis innan List.
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task OnGetAsync()
         {
             Event = await _context.Event.ToListAsync();
 
-            return Page();
+            // return Page();
         }
     }
 }
