@@ -42,26 +42,26 @@
             string EventId = "EventId" + item.Id; <!-- Lagt till ny varibel-->
         <tr id="@EventId">
             <td>
-                @Html.DisplayFor(model => model.Event[0].Title)
+                @Html.DisplayFor(model => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Event[0].Organizers)
+                @Html.DisplayFor(model => item.Organizers)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Event[0].Description)
+                @Html.DisplayFor(model => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Event[0].Adress)
+                @Html.DisplayFor(model => item.Adress)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Event[0].Date)
+                @Html.DisplayFor(model => item.Date) <!-- Den här och den där nere, "item.Spots_available fungerar, men Html.DisplayFor kan göra mer specifika funktioner -->
             </td>
             <td>
-                @Html.DisplayFor(model => model.Event[0].Spots_available)
+                @item.Spots_available
             </td>
             <td>
              
-                <a asp-page="/JoinEvent" asp-route-id="@Model.Event[0].Id"><button class="btn btn-primary">Join</button></a>
+                <a asp-page="/JoinEvent" asp-route-id="@item.Id"><button class="btn btn-primary">Join</button></a>
             </td>
         </tr>
         }

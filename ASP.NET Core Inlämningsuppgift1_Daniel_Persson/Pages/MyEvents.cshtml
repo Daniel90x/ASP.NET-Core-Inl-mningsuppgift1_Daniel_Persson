@@ -37,21 +37,22 @@
         <!-- Foreach: hjälper oss att lägga ut endast en unik bokning. -->
         @foreach (var item in Model.Event)
         {
+
             <tr>
                 <td>
-                    @Html.DisplayFor(model => model.Event[0].Title)
+                    @Html.DisplayFor(model => item.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Event[0].Description)
+                    @Html.DisplayFor(model => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Event[0].Adress)
+                    @Html.DisplayFor(model => item.Adress)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Event[0].Date)
+                    @Html.DisplayFor(model => item.Date)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.Event[0].Attendees)
+                    @Html.DisplayFor(model => item.Attendees)
                 </td>
             </tr>
         }
