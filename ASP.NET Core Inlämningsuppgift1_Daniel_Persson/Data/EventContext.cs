@@ -55,7 +55,7 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
                     Adress = "Strandgatan 7",
                     Description = "Cool Bois show är den nya coola grejen på stand...",
                     Spots_available = 88,
-                    Organizers= organizers[0],
+                    Organizers = organizers[0],
                 },
                 new Event(){
                     
@@ -63,6 +63,14 @@ namespace ASP.NET_Core_Inlämningsuppgift1_Daniel_Persson.Data
                     Adress = "Stengatan 88",
                     Description = "Varför jag? är en show om livet...",
                     Spots_available = 45,
+                    Organizers = organizers[0],
+                },
+                new Event(){
+
+                    Title = "hej på alla",
+                    Adress = "Trädstigen 22",
+                    Description = "bla bla ",
+                    Spots_available = 35,
                     Organizers = organizers[0],
                 },
             };

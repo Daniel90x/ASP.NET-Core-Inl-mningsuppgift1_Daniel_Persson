@@ -39,7 +39,8 @@
         <!-- Foreach: hjälper oss att lägga ut endast en unik bokning. -->
         @foreach (var item in Model.Event)
         {
-        <tr>
+            string EventId = "EventId" + item.Id; <!-- Lagt till ny varibel-->
+        <tr id="@EventId">
             <td>
                 @Html.DisplayFor(model => model.Event[0].Title)
             </td>
